@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Prediction App</title>
+</head>
+
+<body>
+    <h1>Make a Prediction</h1>
+    <form action="/predict" method="post">
+        Gender:
+        <input type="radio" name="gender" value="Male"> Male
+        <input type="radio" name="gender" value="Female"> Female<br>
+
+        Age: <input type="text" name="age"><br>
+        Number of Dependents: <input type="text" name="dependents"><br>
+
+        Married:
+        <input type="radio" name="married" value="Yes"> Yes
+        <input type="radio" name="married" value="No"> No<br>
+
+        Monthly Charge: <input type="text" name="monthly_charge"><br>
+        City: <input type="text" name="city"><br>
+        Total Extra Data Charges: <input type="text" name="extra_data_charges"><br>
+
+        Unlimited Data:
+        <input type="radio" name="unlimited_data" value="Yes"> Yes
+        <input type="radio" name="unlimited_data" value="No"> No<br>
+
+        Satisfaction Score: <input type="text" name="satisfaction_score"><br>
+        Churn Score: <input type="text" name="churn_score"><br>
+
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if prediction %}
+    <h2>Prediction: {{ prediction }}</h2>
+    {% endif %}
+</body>
+
+</html>
